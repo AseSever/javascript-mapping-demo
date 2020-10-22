@@ -1,0 +1,23 @@
+{
+  "name": "js-mapping-demo",
+  "version": "1.0.0",
+  "description": "Web map using Open Source JS libraries and tools.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChadESmith42/javascript-mapping-demo.git"
+  },
+  "author": {
+    "name": "Chad Smith",
+    "email": "chad@codingbychad.com",
+    "url": "https://codingbychad.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChadESmith42/javascript-mapping-demo/issues"
+  },
+  "homepage": "https://github.com/ChadESmith42/javascript-mapping-demo#readme"
+}

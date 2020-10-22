@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Open Source JavaScript Mapping Demo</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="description" content="Simple map application using open source libraries and tools. Authored by Chad Smith" />
+        <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+        <link href="./style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>JavaScript Mapping Demo</h1>
+            <p>Making a basic web map with open source libraries and tools.</p>
+        </header>
+        <main>
+            <section class="map-container">
+                <div class="map" id="map"></div>
+                <div>
+                    <button onclick="GoHome()">Home!</button>
+                </div>
+            </section>
+            <section class="objectives">
+                <h2>Demo objectives:</h2>
+                <ul>
+                    <li>Display a map on a web page using HTML, CSS, and JavaScript only.</li>
+                    <li>Add static data to the map.</li>
+                    <li>Add dynamic content to the map.</li>
+                    <li>Apply styling to the map elements (cartography).</li>
+                    <li>Add controls to the map.</li>
+                    <li>Add popups with custom content to the map.</li>
+                </ul>
+                <article>
+                    <button class="reset" type="button" onclick="GoHome()">Reset Map</button>
+                </article>
+
+            </section>
+        </main>
+        <footer>&copy; <span id="year"></span> Coding By Chad</footer>
+        <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+        <script>
+            var map = new mapboxgl.Map({
+                container: "map",
+                style: {
+                    version: 8,
+                    sources: {
+                        "stamen-toner": {
+                            type: "raster",
+                            tiles: ['https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png'],
+                            tileSize: 256,
+                            attribution:
+                                `Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.`
+                        }
+                    },
+                    layers: [
+                        {
+                            id: "stamen-toner",
+                            type: "raster",
+                            source: "stamen-toner",
+                            minzoom: 0,
+                            maxzoom: 22
+                        }
+                    ]
+                },
+                center: [-94.585818, 39.103259],
+                zoom: 10,
+                bearing: 0,
+                pitch: 0
+            });
+
+            function GoHome() {
+                map.flyTo({
+                    bearing: 0,
+                    center: [-94.585818, 39.103259],
+                    zoom: 10,
+                    speed: 2,
+                    pitch: 0
+                });
+            }
+        </script>
+    </body>
+    </html>
