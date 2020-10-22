@@ -50,6 +50,7 @@ section.map-container {
 }
 
 .map {
+    background-color: var(--emerald);
     height: 700px;
     width: clamp(600px, 1000px, 2500px);
 }
